@@ -52,13 +52,6 @@ const OtherProducts = [
   { path: "/images/Saddle.jpg ", label: "Saddle" },
   { path: "/images/WaterMeter.webp ", label: "Water Meter" },
   { path: "/images/Ferrul.jpeg ", label: "Ferrule" },
-  { path: "/images/Ferrul.jpeg ", label: "Ferrule" },
-  { path: "/images/Ferrul.jpeg ", label: "Ferrule" },
-  { path: "/images/Ferrul.jpeg ", label: "Ferrule" },
-  { path: "/images/Ferrul.jpeg ", label: "Ferrule" },
-  { path: "/images/Ferrul.jpeg ", label: "Ferrule" },
-  { path: "/images/Ferrul.jpeg ", label: "Ferrule" },
-  { path: "/images/Ferrul.jpeg ", label: "Ferrule" },
 ];
 
 function Product() {
@@ -68,26 +61,33 @@ function Product() {
   const WindowWidth = useWindowWidth();
   const productRef = useRef({});
   const selectedRef = useRef(null);
-  const [flagForDisplay, setFlagForDisplay] = useState(false)
- 
-  function findProduct(ref,label) {
+  const [highlightedLabel, setHighlightedLabel] = useState(null);
+
+  // For highlighting searched product
+  MainProducts.forEach((item) => {
+    if (!productRef.current[item.label]) {
+      productRef.current[item.label] = React.createRef();
+      console.log(productRef.current[item.label]);
+    }
+  });
+  OtherProducts.forEach((item) => {
+    if (!productRef.current[item.label]) {
+      productRef.current[item.label] = React.createRef();
+    }
+  });
+
+  function findProduct(ref, label) {
     if (ref && ref.current) {
       selectedRef.current = ref.current;
       if (WindowWidth >= 768) {
         // Desktop: scroll immediately
         ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
-       const [firstChild, secondChild] = ref.current.children;
-        if (firstChild) {
-          firstChild.classList.add("ring-2", "ring-red-400", "animate-pulse");
-        }
-        if (secondChild) {
-          secondChild.classList.add("ring-2", "ring-red-400", "animate-pulse");
-        }
-      } else {
+      } 
+      else {
         // Mobile: save ref, close search, then scroll on useEffect
         setIsMobileSearchActive(false);
       }
-      setFlagForDisplay(true)
+      setHighlightedLabel(label);
     }
   }
 
@@ -96,34 +96,19 @@ function Product() {
       setTimeout(() => {
         selectedRef.current.scrollIntoView({
           behavior: "smooth",
-          block: "start",
+          block: "center",
         });
-      const [firstChild, secondChild] = selectedRef.current.children;
-        if (firstChild) {
-          firstChild.classList.add("ring-2", "ring-red-400", "animate-pulse");
-        }
-        if (secondChild) {
-          secondChild.classList.add("ring-2", "ring-red-400", "animate-pulse");
-        }
       }, 100);
     }
   }, [isMobileSearchActive]);
 
-  useEffect( () => {
-    if(flagForDisplay){
-     const [firstChild, secondChild] = selectedRef.current.children; 
+  useEffect(() => {
+    if (highlightedLabel) {
       setTimeout(() => {
-         if (firstChild) {
-          firstChild.classList.remove("ring-2", "ring-red-400", "animate-pulse");
-        }
-        if (secondChild) {
-          secondChild.classList.remove("ring-2", "ring-red-400", "animate-pulse");
-      }
-      setFlagForDisplay(false)
-      selectedRef.current = null
-    }, 5000);
+        setHighlightedLabel(null);
+      }, 5000);
     }
-  },[flagForDisplay])
+  }, [highlightedLabel]);
 
   // Auto-focus search input when mobile search is activated
   useEffect(() => {
@@ -131,20 +116,6 @@ function Product() {
       searchRef.current.focus();
     }
   }, [isMobileSearchActive]);
-
-  // For highlighting searched product
-  useEffect(() => {
-    MainProducts.forEach((item) => {
-      if (!productRef.current[item.label]) {
-        productRef.current[item.label] = React.createRef();
-      }
-    });
-    OtherProducts.forEach((item) => {
-      if (!productRef.current[item.label]) {
-        productRef.current[item.label] = React.createRef();
-      }
-    });
-  }, []);
 
   // Highlight matching text
   const highlightMatch = (text, search) => {
@@ -190,7 +161,7 @@ function Product() {
             ? "border-r border-gray-200 bg-[#e0e8f3] shadow-lg z-20"
             : ""
         } md:border-r md:border-gray-200 md:bg-[#e0e8f3] md:shadow-lg ${
-          WindowWidth < 768 ? "fixed  left-0 top-0 z-0 h-screen " : "h-screen"
+          WindowWidth < 768 ? "fixed  left-0 top-0 z-20 h-screen " : "h-screen"
         }`}
       >
         {/* Sticky Search - Always visible */}
@@ -275,7 +246,7 @@ function Product() {
                   return (
                     <li
                       key={index}
-                      onClick={() => findProduct(ref,item.label)}
+                      onClick={() => findProduct(ref, item.label)}
                       className="text-black/60 text-sm pl-2 cursor-pointer group"
                     >
                       <div className="inline-flex items-center gap-2 group-hover:text-red-500 transition-all">
@@ -321,6 +292,7 @@ function Product() {
                   name={item.label}
                   brand={item.brand}
                   size={item.Size}
+                  isHighlighted={highlightedLabel === item.label}
                 />
               );
             })}
@@ -341,6 +313,7 @@ function Product() {
                   ref={ref}
                   src={item.path}
                   name={item.label}
+                  isHighlighted={highlightedLabel === item.label}
                 />
               );
             })}

@@ -6,7 +6,7 @@ const CutRectangle = forwardRef((props, ref) => {
   return (
     <div ref={ref} className="w-full relative flex flex-col items-center group">
       {/* SVG Container */}
-      <div className="w-full relative transition-all duration-300 transform group-hover:scale-105 group-hover:z-10 ">
+      <div className={ `w-full relative transition-all duration-300 transform group-hover:scale-105 group-hover:z-10 ${props.isHighlighted ? "ring-2 ring-red-400 animate-pulse" : ""}` }>
         <svg
           viewBox="0 0 349.325 225"
           xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const CutRectangle = forwardRef((props, ref) => {
         )}
       </div>
 
-      <div className={`w-full transition-all duration-300 transform group-hover:scale-105 ${hasDetails ? 'mt-2 p-4 bg-white rounded-b-lg shadow-sm min-h-[120px]' : 'mt-3 min-h-[60px]'} flex flex-col `}>
+      <div className={`w-full transition-all duration-300 transform group-hover:scale-105 ${hasDetails ? 'mt-2 p-4 bg-white rounded-b-lg shadow-sm min-h-[120px]' : 'mt-3 min-h-[60px]'} flex flex-col ${props.isHighlighted ? "ring-2 ring-red-400 animate-pulse" : ""} `}>
         {hasDetails ? (
           <>
             <div className="flex flex-col gap-2 text-sm flex-grow relative">
