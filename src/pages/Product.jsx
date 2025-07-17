@@ -82,8 +82,7 @@ function Product() {
       if (WindowWidth >= 768) {
         // Desktop: scroll immediately
         ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
-      } 
-      else {
+      } else {
         // Mobile: save ref, close search, then scroll on useEffect
         setIsMobileSearchActive(false);
       }
@@ -276,8 +275,26 @@ function Product() {
           WindowWidth < 768 ? "pt-16" : ""
         } `}
       >
+        <svg
+          className="absolute top-0 right-0 w-[70%] h-[90%] md:w-[60%] lg:w-[60%] z-0 pointer-events-none"
+          viewBox="0 0 400 400"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="fadeGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#dbeafe" stopOpacity="0.2" />
+              <stop offset="100%" stopColor="#dbeafe" stopOpacity="1" />
+            </linearGradient>
+          </defs>
+          <circle
+            cx={400}
+            cy={WindowWidth < 768 ? -1000 : 0}
+            r={400}
+            fill="url(#fadeGradient)"
+          />
+        </svg>
         {/* MAIN PRODUCTS SECTION */}
-        <section className="mb-8 bg-gradient-to-b from-[#FFFFFF] to-[#dae3e8]">
+        <section className="mb-8 bg-gradient-to-b from-[#FFFFFF] to-[#dae3e8] relative z-10">
           <h1 className="text-2xl font-bold text-gray-700 mb-4 border-b pb-2">
             Main Products
           </h1>
