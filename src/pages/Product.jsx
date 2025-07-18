@@ -42,17 +42,72 @@ const MainProducts = [
 ];
 
 const OtherProducts = [
-  { path: "/images/GateValve.jpg", label: "Gate Valve" },
-  { path: "/images/giSocket.jpeg", label: "GI Socket" },
-  { path: "/images/giElbow.jpeg", label: "GI Elbow" },
-  { path: "/images/giTee.jpeg", label: "GI Tee" },
-  { path: "/images/giUnion.jpeg", label: "GI Union" },
-  { path: "/images/giRSocket.jpeg", label: "GI R.Socket" },
-  { path: "/images/giCrosstee.jpeg", label: "GI Crosstee" },
-  { path: "/images/sluicevalve.jpeg", label: "Sluice Valve" },
-  { path: "/images/Saddle.jpg", label: "Saddle" },
-  { path: "/images/WaterMeter.webp", label: "Water Meter" },
-  { path: "/images/Ferrul.jpeg", label: "Ferrule" },
+  {
+    path: "/images/GateValve.jpg",
+    label: "Gate Valve",
+    brand: "Shree, Devi, Chinese",
+    Size: "All Sizes Available",
+  },
+  {
+    path: "/images/giSocket.jpeg",
+    label: "GI Socket",
+    brand: "Kriti, Unik, Sun",
+    Size: "All Sizes Available",
+  },
+  {
+    path: "/images/giElbow.jpeg",
+    label: "GI Elbow",
+    brand: "Kriti, Unik, Sun",
+    Size: "All Sizes Available",
+  },
+  {
+    path: "/images/giTee.jpeg",
+    label: "GI Tee",
+    brand: "Kriti, Unik, Sun",
+    Size: "All Sizes Available",
+  },
+  {
+    path: "/images/giUnion.jpeg",
+    label: "GI Union",
+    brand: "Kriti, Unik, Sun",
+    Size: "All Sizes Available",
+  },
+  {
+    path: "/images/giRSocket.jpeg",
+    label: "GI R.Socket",
+    brand: "Kriti, Unik, Sun",
+    Size: "All Sizes Available",
+  },
+  {
+    path: "/images/giCrosstee.jpeg",
+    label: "GI Crosstee",
+    brand: "Kriti, Unik, Sun",
+    Size: "All Sizes Available",
+  },
+  {
+    path: "/images/sluicevalve.jpeg",
+    label: "Sluice Valve",
+    brand: "Indian, Chinese",
+    Size: "All Sizes Available",
+  },
+  {
+    path: "/images/Saddle.jpg",
+    label: "Saddle",
+    brand: "Era",
+    Size: "All Sizes Available",
+  },
+  {
+    path: "/images/WaterMeter.webp",
+    label: "Water Meter",
+    brand: "Amit Water Meter",
+    Size: "All Sizes Available",
+  },
+  {
+    path: "/images/Ferrul.jpeg",
+    label: "Ferrule",
+    brand: "Ankur",
+    Size: "Heavy, Light",
+  },
 ];
 
 function Product() {
@@ -163,7 +218,9 @@ function Product() {
 
       <Navbar />
 
-      <div className="flex w-full h-[calc(100vh-64px)]"> {/* 64px assumes navbar height */}
+      <div className="flex w-full h-[calc(100vh-64px)]">
+        {" "}
+        {/* 64px assumes navbar height */}
         {/* Sidebar */}
         <div
           className={`flex flex-col w-[300px] ${
@@ -258,7 +315,6 @@ function Product() {
             </div>
           </div>
         </div>
-
         {/* Main Content */}
         <div className="flex-1 overflow-y-auto p-4">
           {/* Mobile Search Toggle */}
@@ -306,6 +362,8 @@ function Product() {
                     ref={ref}
                     src={item.path}
                     name={item.label}
+                    brand={item.brand}
+                    size={item.Size}
                     isHighlighted={highlightedLabel === item.label}
                   />
                 );

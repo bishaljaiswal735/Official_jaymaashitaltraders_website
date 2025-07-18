@@ -50,7 +50,7 @@ function Navbar() {
                 key={item}
                 className="cursor-pointer hover:text-red-500 transition-all duration-200 relative group"
               >
-                <Link to={pathMap[item]} className="text-[clamp(12px,1.1vw,18px)] ">
+                <Link to={pathMap[item]} className="text-[clamp(12px,1.1vw,18px)]">
                   {item}
                 </Link>
                 <div className="absolute bottom-0 h-0.5 w-full bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform ease-in-out duration-200"></div>
@@ -62,7 +62,7 @@ function Navbar() {
                 alt="logo2"
                 className="h-[clamp(20px,2.5vw,32px)]"
               />
-              <span className="text-[clamp(12px,1vw,16px)]">9818607337</span>
+              <span className="text-[clamp(12px,1vw,16px)] ">9818607337</span>
             </li>
           </ul>
 

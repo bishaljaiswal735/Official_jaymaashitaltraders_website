@@ -4,25 +4,34 @@ import Home from "./pages/Home";
 import Pricing from "./pages/Pricing";
 import ContactPage from "./pages/Contact";
 import Product from "./pages/Product";
-import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollTop"; 
+
+const withScroll = (element) => (
+  <>
+    <ScrollToTop />
+    {element}
+  </>
+);
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: withScroll(<Home />),
   },
   {
     path: "/product",
-    element: <Product />,
+    element: withScroll(<Product />),
   },
   {
     path: "/pricing",
-    element: <Pricing />,
+    element: withScroll(<Pricing />),
   },
   {
     path: "/contact",
-    element: <ContactPage />,
+    element: withScroll(<ContactPage />),
   },
 ]);
+
 function App() {
   return <RouterProvider router={router} />;
 }
