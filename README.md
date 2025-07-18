@@ -1,12 +1,70 @@
-# React + Vite
+# Official Website - Jay Maa Shitala Traders Pvt. Ltd.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the official GitHub repository for the **Jay Maa Shitala Traders Pvt. Ltd.** website. This site represents our company online, providing information about our products, services, and contact details.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🏢 About Us
 
-## Expanding the ESLint configuration
+**Jay Maa Shitala Traders Pvt. Ltd.** is a leading manufacturer of GI Nipples and Flanges and a trusted wholesale supplier of GI, DI, and CI hardware products across Nepal. Established in 2015 and located in Dhobighat, Lalitpur, we deliver to all locations throughout the country.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Our key offerings include:
+- GI Pipes and Fittings
+- Threaded Rods
+- Brass Valves
+- Gate Valves
+- HDPE Flanges & Saddles
+- Water Meters
+- Various other Hardware Accessories
+
+---
+
+## 🌐 Live Website
+
+**[Visit Website](https://www.jmstraders.com.np)**  
+
+
+---
+
+## 📁 Project Structure
+
+```bash
+Official_jaymaashitaltraders_website/
+├── public/               # Static files and assets
+├── src/                  # Source code
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Page components (Home, About, Contact, etc.)
+│   ├── App.jsx           # Main App entry
+│   └── index.js          # React entry point
+├── tailwind.config.js    # Tailwind CSS configuration
+├── package.json          # Project metadata and dependencies
+├── README.md             # Project documentation
+└── ...
+```
+
+
+---
+
+## 🚀 Tech Stack
+
+- **React** — Frontend framework
+- **Tailwind CSS** — Utility-first CSS for styling
+- **Vite / CRA** — *(Specify if you're using Vite or Create React App)*
+- **HTML, JavaScript, JSX**
+
+---
+
+## 🛠️ Installation & Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/bishaljaiswal735/Official_jaymaashitaltraders_website.git
+
+# Navigate into the directory
+cd Official_jaymaashitaltraders_website
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev   # or `npm start` if using CRA
