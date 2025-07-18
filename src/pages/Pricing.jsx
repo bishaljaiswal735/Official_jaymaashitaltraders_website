@@ -5,11 +5,12 @@ import { GiNipplesData } from "../price_component/GiNipplesData";
 import { SaddleData } from "../price_component/SaddleData";
 import GiTablePriceList from "../price_component/GiTablePriceList";
 import useWindowWidth from "../components/useWindowWidth";
+import Navbar from "../components/Navbar";
 
 function Pricing() {
    const windowWidth = useWindowWidth()
   return (
-    <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen py-12">
+    <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen ">
       <svg
         className="absolute top-0 right-0 w-[70%] h-[90%] md:w-[60%] lg:w-[60%] z-0 pointer-events-none"
         viewBox="0 0 400 400"
@@ -23,13 +24,14 @@ function Pricing() {
         </defs>
         <circle
           cx={400}
-          cy={windowWidth < 768 ? -2000 : -500}
+          cy={windowWidth < 768 ? -150 : 0}
           r={400}
           fill="url(#fadeGradient)"
         />
       </svg>
+      <Navbar/>
       {/* Page Header */}
-      <header className="text-center mb-12 px-4 relative z-10">
+      <header className="text-center mb-12 px-4 relative z-10 pt-10">
         <div className="max-w-4xl mx-auto">
           <h1
             className="text-xs uppercase tracking-widest text-red-500 font-semibold mb-3"

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CutRectangle from "./CutRectangle";
 const image_label = [
   { image: "/images/ginipple.webp", label:"GI Nipple" },
@@ -27,10 +28,11 @@ function MainSection1() {
         ))}
       </div>
       <div>
-        <a href="#"></a>
+        <Link to="/product">
         <button className="text-white bg-black cursor-pointer hover:text-red-500 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-2 sm:py-2 md:py-3 rounded-md mt-10">
           VIEW MORE
         </button>
+        </Link>
       </div>
     </div>
   );

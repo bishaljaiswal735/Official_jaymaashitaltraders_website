@@ -6,6 +6,7 @@ import {
   BuildingOfficeIcon,
 } from "@heroicons/react/24/outline";
 import useWindowWidth from "../components/useWindowWidth";
+import Navbar from "../components/Navbar";
 
 export default function ContactPage() {
   const windowWidth = useWindowWidth();
@@ -24,11 +25,13 @@ export default function ContactPage() {
         </defs>
         <circle
           cx={400}
-          cy={windowWidth < 768 ? -1000 : 0}
-          r={400}
+          cy={windowWidth < 768 ? -1000 : -150}
+          r={370}
           fill="url(#fadeGradient)"
         />
       </svg>
+      <Navbar/>
+
       <div className=" relative z-10 py-20 px-4 sm:px-6 lg:px-8 text-center ">
         <div className="max-w-4xl mx-auto">
           <h1
