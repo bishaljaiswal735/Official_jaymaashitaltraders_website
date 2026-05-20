@@ -4,7 +4,9 @@ import Home from "./pages/Home";
 import Pricing from "./pages/Pricing";
 import ContactPage from "./pages/Contact";
 import Product from "./pages/Product";
-import ScrollToTop from "./components/ScrollTop"; 
+import ProductDetail from "./pages/ProductDetail";
+import CategoryProducts from "./pages/CategoryProducts";
+import ScrollToTop from "./components/ScrollTop";
 
 const withScroll = (element) => (
   <>
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
   {
     path: "/product",
     element: withScroll(<Product />),
+  },
+  {
+    path: "/product/category/:categorySlug",
+    element: withScroll(<CategoryProducts />),
+  },
+  {
+    path: "/product/:slug",
+    element: withScroll(<ProductDetail />),
   },
   {
     path: "/pricing",

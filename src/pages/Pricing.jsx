@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import FlangePriceList from "../price_component/FlangePriceList";
 import { GiFittingsData } from "../price_component/GiFittingsData";
 import { GiNipplesData } from "../price_component/GiNipplesData";
@@ -11,6 +12,12 @@ function Pricing() {
    const windowWidth = useWindowWidth()
   return (
     <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen ">
+      <Helmet>
+        <title>GI Fittings Price List Nepal | Jay Maa Shitala Traders</title>
+        <meta name="description" content="Current price list for GI nipples, flanges, elbows, tees, sockets, saddle and all GI fittings in Nepal. Prices include 13% VAT. Jay Maa Shitala Traders." />
+        <meta name="keywords" content="GI nipple price Nepal, GI flange price Nepal, GI elbow price Nepal, GI tee price Nepal, GI socket price Nepal, saddle price Nepal, pipe fittings price Nepal, hardware price Nepal" />
+        <link rel="canonical" href="https://www.jmstraders.com.np/pricing" />
+      </Helmet>
       <svg
         className="absolute top-0 right-0 w-[70%] h-[90%] md:w-[60%] lg:w-[60%] z-0 pointer-events-none"
         viewBox="0 0 400 400"

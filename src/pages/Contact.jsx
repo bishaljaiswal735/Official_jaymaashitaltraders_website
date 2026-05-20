@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import {
   MapPinIcon,
   PhoneIcon,
@@ -12,6 +13,12 @@ export default function ContactPage() {
   const windowWidth = useWindowWidth();
   return (
     <div className=" bg-gradient-to-b from-white to-gray-50 min-h-screen bg-gray-50 relative">
+      <Helmet>
+        <title>Contact Us | Jay Maa Shitala Traders Nepal - GI Fittings Supplier</title>
+        <meta name="description" content="Contact Jay Maa Shitala Traders Pvt. Ltd. for GI nipples, flanges, elbows, valves and plumbing hardware in Nepal. Call or WhatsApp us for pricing and bulk orders." />
+        <meta name="keywords" content="Jay Maa Shitala Traders contact, GI fittings supplier Nepal contact, hardware supplier Nepal phone, plumbing hardware Nepal" />
+        <link rel="canonical" href="https://www.jmstraders.com.np/contact" />
+      </Helmet>
       <svg
         className="absolute top-0 right-0 w-[70%] h-[90%] md:w-[60%] lg:w-[60%] z-0 pointer-events-none"
         viewBox="0 0 400 400"

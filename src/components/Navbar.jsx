@@ -33,8 +33,8 @@ function Navbar() {
 
   return (
     <>
-      {/* Compact Sticky Navbar */}
-      <div className="sticky top-0 z-40 w-full bg-[#dae3e8]/80 backdrop-blur-sm shadow-md">
+      {/* Navbar */}
+      <div className="w-full bg-[#dae3e8]/80 backdrop-blur-sm shadow-md">
         <nav className="relative w-[90%] flex flex-row items-center justify-between mx-auto py-1"> {/* Reduced py */}
           <Link to="/" className="cursor-pointer">
             <img
